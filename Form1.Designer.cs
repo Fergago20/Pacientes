@@ -44,12 +44,12 @@
             this.tbAlergia = new System.Windows.Forms.TextBox();
             this.cbGenero = new System.Windows.Forms.ComboBox();
             this.cbDepartamento = new System.Windows.Forms.ComboBox();
-            this.dcvSalida = new System.Windows.Forms.DataGridView();
+            this.dgvSalida = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.guardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.limpiarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dcvSalida)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalida)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,7 +149,9 @@
             // 
             // tbMotivo
             // 
+            this.tbMotivo.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.tbMotivo.Location = new System.Drawing.Point(224, 297);
+            this.tbMotivo.Multiline = true;
             this.tbMotivo.Name = "tbMotivo";
             this.tbMotivo.Size = new System.Drawing.Size(134, 20);
             this.tbMotivo.TabIndex = 11;
@@ -163,6 +165,7 @@
             this.chbAlergia.TabIndex = 14;
             this.chbAlergia.Text = "Si";
             this.chbAlergia.UseVisualStyleBackColor = true;
+            this.chbAlergia.CheckedChanged += new System.EventHandler(this.AlergiasSi);
             // 
             // tbAlergia
             // 
@@ -187,13 +190,13 @@
             this.cbDepartamento.Size = new System.Drawing.Size(134, 21);
             this.cbDepartamento.TabIndex = 17;
             // 
-            // dcvSalida
+            // dgvSalida
             // 
-            this.dcvSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dcvSalida.Location = new System.Drawing.Point(468, 144);
-            this.dcvSalida.Name = "dcvSalida";
-            this.dcvSalida.Size = new System.Drawing.Size(240, 150);
-            this.dcvSalida.TabIndex = 18;
+            this.dgvSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSalida.Location = new System.Drawing.Point(468, 144);
+            this.dgvSalida.Name = "dgvSalida";
+            this.dgvSalida.Size = new System.Drawing.Size(240, 150);
+            this.dgvSalida.TabIndex = 18;
             // 
             // menuStrip1
             // 
@@ -212,25 +215,28 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
             // guardarToolStripMenuItem
             // 
             this.guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
             this.guardarToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.guardarToolStripMenuItem.Text = "Guardar";
+            this.guardarToolStripMenuItem.Click += new System.EventHandler(this.guardarToolStripMenuItem_Click);
             // 
             // limpiarToolStripMenuItem
             // 
             this.limpiarToolStripMenuItem.Name = "limpiarToolStripMenuItem";
             this.limpiarToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.limpiarToolStripMenuItem.Text = "Limpiar";
+            this.limpiarToolStripMenuItem.Click += new System.EventHandler(this.limpiarToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dcvSalida);
+            this.Controls.Add(this.dgvSalida);
             this.Controls.Add(this.cbDepartamento);
             this.Controls.Add(this.cbGenero);
             this.Controls.Add(this.tbAlergia);
@@ -251,7 +257,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dcvSalida)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSalida)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -277,7 +283,7 @@
         private System.Windows.Forms.TextBox tbAlergia;
         private System.Windows.Forms.ComboBox cbGenero;
         private System.Windows.Forms.ComboBox cbDepartamento;
-        private System.Windows.Forms.DataGridView dcvSalida;
+        private System.Windows.Forms.DataGridView dgvSalida;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem guardarToolStripMenuItem;

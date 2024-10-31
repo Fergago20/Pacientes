@@ -15,14 +15,18 @@ namespace Pacientes
         public char Genero { get; set; }
         public string Departamento { get; set; }
         public string Motivo { get; set; }
+        private string alergia;
         public string Alergia
         {
             get
             {
                 return
-                string.IsNullOrEmpty(Alergia) ? "Sin alergias" : Alergia;
+                string.IsNullOrEmpty(alergia) ? "Sin alergias" : alergia;
             }
-            set { Alergia = value; }
+            set
+            {
+                alergia = value;
+            } 
         }
     }
 }
